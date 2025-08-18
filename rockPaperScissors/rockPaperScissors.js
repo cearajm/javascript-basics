@@ -1,5 +1,6 @@
 
 function getComputerChoice(max) {
+    max = 3;
     let a = Math.floor(Math.random() * max);
     let computerChoice;
 
@@ -54,27 +55,63 @@ function playRound(humanChoice, computerChoice) {
 }
 
 
-let humanScore = 0;
-let computerScore = 0;
+let rock = document.querySelector("rock");
+let paper = document.querySelector("paper");
+let scissors = document.querySelector("scissors");
 
-for (let i = 0; i < 5; i++) {
-    let win = playRound(getHumanChoice(), getComputerChoice(3));
 
+const buttons = document.querySelectorAll("button");
+buttons.forEach(item => {
+    const humanChoice = item.className;
+    item.addEventListener("click", () => {
+        let win = playRound(humanChoice, getComputerChoice());
+        winMessage(win);
+        });
+    }
+);
+
+function winMessage(win) {
     if (win == "tie") {
-    } else if (win == false) {
-        console.log();
-        computerScore++;
-    } else if (win == true) {
-        humanScore++;
+        console.log("it's a tie. how boring");
+    } else if (win) {
+        console.log("winner winner");
+    } else {
+        console.log("wow embarassing");
     }
 }
 
-console.log("your score: " + humanScore);
-console.log("computer score: " + computerScore);
+// rock.addEventListener("click")
 
-if (humanScore > computerScore) {console.log("yaaaay winner");}
-else if (humanScore < computerScore) {console.log("you smelly loser you're a freak");}
-else {console.log("it's a tie");}
+
+
+
+// let win = playRound(getHumanChoice(), getComputerChoice());
+
+
+
+
+// PLAY FIVE ROUNDS
+// let humanScore = 0;
+// let computerScore = 0;
+
+// for (let i = 0; i < 5; i++) {
+//     let win = playRound(getHumanChoice(), getComputerChoice(3));
+
+//     if (win == "tie") {
+//     } else if (win == false) {
+//         console.log();
+//         computerScore++;
+//     } else if (win == true) {
+//         humanScore++;
+//     }
+// }
+
+// console.log("your score: " + humanScore);
+// console.log("computer score: " + computerScore);
+
+// if (humanScore > computerScore) {console.log("yaaaay winner");}
+// else if (humanScore < computerScore) {console.log("you smelly loser you're a freak");}
+// else {console.log("it's a tie");}
 
 
 
