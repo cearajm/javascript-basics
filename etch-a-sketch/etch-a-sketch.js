@@ -47,12 +47,25 @@ function createRows(gridSize) {
 
 function createSquares(gridSize) {
     const rows = document.querySelectorAll(".row");
-    
+    let squareSize = 1000/gridSize;
+    let marginSize = 1000/gridSize * (10/100);
+    squaresContainer.style.setProperty("padding", "" + marginSize + "px");
     rows.forEach(row => {
         console.log("hello");
+        row.style.setProperty("max-height", "" + squareSize + "px");
         for (i = 0; i < gridSize; i++){
             const square = document.createElement("div")
             square.classList = "square"
+            square.style.setProperty("max-width", "" + squareSize + "px");
+            square.style.setProperty("max-height", "" + squareSize + "px");
+            // square.style.setProperty("margin", "" + marginSize + "px");
+            square.addEventListener("mouseover", () => {
+                square.style.backgroundColor = "pink";
+
+            });
+            // square.addEventListener("mouseleave", () => {
+            //     square.style.backgroundColor = "rgb(84, 141, 246)";
+            // });
             row.appendChild(square);
         }
     })
@@ -61,7 +74,7 @@ function createSquares(gridSize) {
 function getGridSize() {
     let gridSize = 0;
     if (isInitialGrid) {
-        gridSize = 4;
+        gridSize = 50;
         isInitialGrid = false;
     } else {
         gridSize = getInput();
@@ -71,10 +84,10 @@ function getGridSize() {
 }
 
 function getInput() {
-    let userInput = prompt("Enter number of squares:");
+    let userInput = prompt("Enter a grid length from 1-100:");
     let int = parseInt(userInput);
 
-    if (Number.isInteger(int) && int <= 10) {
+    if (Number.isInteger(int) && int <= 100) {
     } else {
         userInput = 0;
     }

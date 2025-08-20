@@ -11,41 +11,48 @@ body {
 button {
     font-size: 30px;
     margin-top: 50px;
+    padding: 10px 20px;
 }
 
 .gridArea {
     display: flex;
     background-color: lightblue;
-    height: 600px;
-    width: 600px;
+    height: 1000px;
+    width: 1000px;
     align-items: stretch;
     justify-content: center;
-    padding: 8px 0px;
+    padding: 0px 0px;
 }
 
 .squaresContainer {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     /* background-color: pink; */
-    max-height: 100%;
-    max-width: 100%;
-    flex: 1;
+    max-height: 1000px;
+    max-width: 1000px;
+    flex: 1 1 0;
 }
 
 .row {
     display: flex;
-    flex: 1;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100%;
-    margin: 8px;
+    /* justify-content: stretch; */
+    /* align-items: stretch; */
+    /* height: 1000px;
+    width: 1000px; */
+    flex: 1 1 0;
+    min-height: 0px;
+    min-width: 0px;
+    /* max-width: 100%; */
+    /* margin: 0; */
 }
 
 .square {
+    /* height: 300px; */
+    /* width: 200px; */
     background-color: rgb(84, 141, 246);
-    min-height: 100%;
-    max-width: 100%;
-    flex: 1;
-    margin: 8px;
+    flex: 1 1 0;
+    min-width: 0px;
+    min-height: 0px;
+
+    /* margin: 20px; */
 }
