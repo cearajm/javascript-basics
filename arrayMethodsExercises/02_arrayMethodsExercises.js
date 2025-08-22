@@ -33,8 +33,47 @@ let friendsMapped = friends.map(item => ({  // returns new array, original array
 
 
 // sort users by age
+let cel = { name: "Cel", age: 25 };
+let meringue = { name: "Meringue", age: 24 };
+let howl = { name: "Howl", age: 28 };
 
 
+let arr = [ cel, meringue, howl ];
+let object = {};  // 3 objects
+let sortedByAge = [];
+sortByAge(arr);
+
+// turn friends into 3 values of a new object using friend.age as a key.
+// use for...in on the new object, to iterate in order of key value.
+// push each friend to an array. the array is now sorted by age.
+function sortByAgeBAD(arr) {
+    arr.forEach(friend => {
+        let key = friend.age;
+        console.log(key);
+        object[key] = friend;
+        console.log(object[key]);
+    });
+    console.log(object);
+    for (let key in object) {
+        console.log("key: " + key);
+        let friend = object[key];
+        sortedByAge.push(friend);
+    }
+}
+
+// actual solution lol. forgot this is about array functions.
+function sortByAge(arr) {
+    arr.sort((a, b) => a.age - b.age);
+}
+
+// now: [john, mary, pete]
+// alert(sortedByAge[0].name); // Meringue
+// alert(sortedByAge[1].name); // Cel
+// alert(sortedByAge[2].name); // Howl
+
+alert(arr[0].name); // Meringue
+alert(arr[1].name); // Cel
+alert(arr[2].name); // Howl
 
 
 
