@@ -32,11 +32,11 @@ let friendsMapped = friends.map(item => ({  // returns new array, original array
 // alert( friendsMapped[0].fullName ) // John Smith
 
 
+
 // sort users by age
 let cel = { name: "Cel", age: 25 };
 let meringue = { name: "Meringue", age: 24 };
 let howl = { name: "Howl", age: 28 };
-
 
 let arr = [ cel, meringue, howl ];
 let object = {};  // 3 objects
@@ -51,7 +51,7 @@ function sortByAgeBAD(arr) {
         let key = friend.age;
         console.log(key);
         object[key] = friend;
-        console.log(object[key]);
+        // console.log(object[key]);
     });
     console.log(object);
     for (let key in object) {
@@ -71,11 +71,47 @@ function sortByAge(arr) {
 // alert(sortedByAge[1].name); // Cel
 // alert(sortedByAge[2].name); // Howl
 
-alert(arr[0].name); // Meringue
-alert(arr[1].name); // Cel
-alert(arr[2].name); // Howl
+// alert(arr[0].name); // Meringue
+// alert(arr[1].name); // Cel
+// alert(arr[2].name); // Howl
 
 
 
 // get average age
+let wolfwood = { name: "Wolfwood", age: 25 };
+let marcille = { name: "Marcille", age: 30 };
+let yotsuba = { name: "Yotsuba", age: 29 };
+
+let buddies = [ wolfwood, marcille, yotsuba ];
+
+// alert( getAverageAge(buddies) ); // (25 + 30 + 29) / 3 = 28
+// alert( getAverageAge2(buddies) ); // (25 + 30 + 29) / 3 = 28
+
+function getAverageAge(users) {
+    // if has age, get age
+    let age = 0;
+    let numUsers = 0;
+    users.forEach(user => {
+        if (user.age) {
+            age = age + user.age;
+            numUsers++;
+            console.log(user.age);
+            console.log(numUsers);
+        }
+    })
+    let averageAge = age / numUsers;
+    return averageAge;
+}
+
+function getAverageAge2(arr) {
+    let numUsers = 0;
+    arr.forEach(user => {
+        if (user.age) {numUsers++};
+    });
+    let sum = arr.reduce((total, current) => total + current.age, 0);
+    return ageAverage = sum / numUsers;
+}
+
+
+
 // create keyed object from array
