@@ -115,3 +115,32 @@ function getAverageAge2(arr) {
 
 
 // create keyed object from array
+let pals = [
+  {id: 'jinx', name: "Jinx", age: 20},   // initial
+  {id: 'yon', name: "Yon", age: 24},        // current
+  {id: 'viggy', name: "Viggy", age: 31},
+];
+
+let usersById = groupById(pals);
+console.log(usersById);
+
+function groupById(array) {
+    let initial = {};
+    let usersById = array.reduce(
+        (accumulator, current) => {
+            accumulator[current.id] = current;
+            return accumulator;
+        }, initial,  // set accumulator as initial value
+    )
+    return usersById;
+}
+
+/*
+// after the call we should have:
+
+usersById = {
+  john: {id: 'john', name: "John Smith", age: 20},
+  ann: {id: 'ann', name: "Ann Smith", age: 24},
+  pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/
