@@ -1,0 +1,82 @@
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    margin-top: 100px;
+    margin-bottom: 60px;
+    background-color: rgb(193, 212, 252);
+    padding: 40px;
+    width: 500px;
+    justify-content: center;
+    display: flex;
+}
+
+.output p {
+    font-size: 30px;
+}
+
+.calculator {
+    background-color: lightblue;
+    display: flex;
+    max-height: fit-content;
+    max-width: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.digitContainer {
+    background-color: lightpink;
+    max-height: fit-content;
+    max-width: fit-content;
+    display: flex;
+}
+
+.digitRow {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    /* border: 3px solid black; */
+}
+
+.operatorContainer {
+    background-color: lightpink;
+    max-height: fit-content;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+
+}
+
+.operatorRow {
+    align-content: flex-end;
+    flex-direction: column;
+    /* border: 3px solid black; */
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+button {
+    height: 120px;
+    width: 120px;
+    margin: 4px;
+    flex-wrap: nowrap;
+    font-size: 25px;
+}
+
+.zero {
+    height: 248px;
+}
+
+.equals {
+    width: 248px;
+}
